@@ -25,10 +25,10 @@ export default function LabTabs() {
             <Tab label="Colebrook-White" value="4" />
           </TabList>
         </Box>
-        <TabPanel value="1">
+        <TabPanel value="1" width="auto">
           <TMDA />
-          Tablas de variación porcentual
-          
+            Tablas de variación porcentual
+
           <HourTab />
           <DayTab />
           <MonthVarTab />
