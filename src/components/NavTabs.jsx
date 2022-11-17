@@ -5,9 +5,8 @@ import TabContext from "@mui/lab/TabContext";
 import TabList from "@mui/lab/TabList";
 import TabPanel from "@mui/lab/TabPanel";
 import TMDA from "../pages/TMDA";
-import Collapsivetabs from "./collapsivetabs";
-import HourVarTab from "../components/HourVarTab";
-import DayVarTab from "../components/DayVarTab";
+import HourTab from "../components/HourTab";
+import DayTab from "./DayTab";
 import MonthVarTab from "../components/MonthVarTab";
 
 export default function LabTabs() {
@@ -23,22 +22,24 @@ export default function LabTabs() {
             <Tab label="TMDA" value="1" />
             <Tab label="Nivel de Servicio" value="2" />
             <Tab label="Item Three" value="3" />
+            <Tab label="Colebrook-White" value="4" />
           </TabList>
         </Box>
         <TabPanel value="1">
           <TMDA />
           Tablas de variación porcentual
           
-          <Collapsivetabs />
-          <HourVarTab />
-          <DayVarTab />
+          <HourTab />
+          <DayTab />
           <MonthVarTab />
         </TabPanel>
         <TabPanel value="2" align="center">
-          
+          <HourTab />
         </TabPanel>
         <TabPanel value="3">
-          <Collapsivetabs />
+        </TabPanel>
+        <TabPanel value="4">
+
         </TabPanel>
       </TabContext>
     </Box>
