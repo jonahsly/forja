@@ -6,6 +6,7 @@ import MonthTab from "../components/MonthTab";
 export default function PercTabs() {
     return (
         <>
+            <h4>Tablas de variación porcentual</h4>
             <HourTab />
             <DayTab />
             <MonthTab />

@@ -7,9 +7,9 @@ export default function Layout() {
   return (
     <React.Fragment>
       <CssBaseline />
-      <Container>
+     
         <NavTabs/>
-      </Container>
+     
     </React.Fragment>
   );
 }

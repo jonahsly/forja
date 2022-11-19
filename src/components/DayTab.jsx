@@ -23,7 +23,7 @@ export default function DayTable() {
   const [open, setOpen] = React.useState(false);
   return (
     
-      <Table sx={{ maxWidth: '40ch' }}>
+      <Table sx={{ maxWidth: '30rem' }}>
           <TableRow sx={{ '& > *': { borderBottom: 'unset' } }}>
             <TableCell>
               <IconButton

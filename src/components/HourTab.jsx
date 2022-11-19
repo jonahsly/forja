@@ -39,7 +39,7 @@ const rows = [
 export default function HourTable() {
   const [open, setOpen] = React.useState(false);
   return (
-      <Table sx={{ maxWidth: "40ch" }}>
+      <Table sx={{ maxWidth: "30rem" }}>
           <TableRow sx={{ "& > *": { borderBottom: "unset" } }}>
             <TableCell >
               <IconButton size="large" onClick={() => setOpen(!open)}>
