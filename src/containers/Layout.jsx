@@ -1,7 +1,7 @@
 import * as React from 'react';
 import CssBaseline from '@mui/material/CssBaseline';
 import Container from '@mui/material/Container';
-import NavTabs from '../components/NavTabs';
+import NavTabs from '../containers/NavTabs';
 
 export default function Layout() {
   return (

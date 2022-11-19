@@ -1,26 +1,15 @@
 import * as React from 'react';
 import Table from '@mui/material/Table';
-import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';
-import TableContainer from '@mui/material/TableContainer';
-import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
-import Box from '@mui/material/Box';
 import Collapse from '@mui/material/Collapse';
 import IconButton from '@mui/material/IconButton';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 
-
-
-function createTabOne(
-  day: string,
-  cars: number,
-  trucknbus: number,
-) {
+function createTabOne(day, cars, trucknbus) {
   return { day, cars, trucknbus};
 }
-
 const rows = [
   createTabOne('Lunes', 84.01, 108.69),
   createTabOne('Martes', 81.19, 110.55),
@@ -30,13 +19,11 @@ const rows = [
   createTabOne('Sábado', 123.91, 109.86),
   createTabOne('Domingo', 158.41, 39.51),
 ];
-
 export default function DayTable() {
   const [open, setOpen] = React.useState(false);
   return (
-    <TableContainer sx={{ width: 'auto' }}>
-      <Table sx={{ width: 'auto' }}>
-        <TableBody>
+    
+      <Table sx={{ maxWidth: '40ch' }}>
           <TableRow sx={{ '& > *': { borderBottom: 'unset' } }}>
             <TableCell>
               <IconButton
@@ -50,19 +37,14 @@ export default function DayTable() {
               Variación Diaria
             </TableCell>
           </TableRow>
-        <TableRow>
           <TableCell style={{ paddingBottom: 0, paddingTop: 0 }} colSpan={6}>
             <Collapse in={open} timeout="auto" unmountOnExit>
-              <Box sx={{ margin: 1 }}>   
                 <Table size="small" aria-label="purchases">
-                  <TableHead>
                     <TableRow>
                       <TableCell align="center">Día</TableCell>
                       <TableCell align="center">Autos</TableCell>
                       <TableCell align="center">Camiones/Ómnibus</TableCell>
                     </TableRow>
-                  </TableHead>
-                  <TableBody >
                     {rows.map((row) => (
                       <TableRow
                         key={row.day}
@@ -75,14 +57,9 @@ export default function DayTable() {
                       <TableCell align="center">{row.trucknbus}</TableCell>
                     </TableRow>
                     ))}
-                  </TableBody>
                 </Table>
-              </Box>
-            </Collapse>
+              </Collapse>
           </TableCell>
-        </TableRow>
-        </TableBody>
-      </Table>
-    </TableContainer>
-  );
+        </Table>
+    );
 }
