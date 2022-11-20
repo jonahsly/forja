@@ -1,13 +1,14 @@
-import React from 'react';
-import NavBar from './components/NavBar';
-import Layout from './containers/Layout';
+import * as React from 'react';
+import Header from './components/Header';
+import CssBaseline from '@mui/material/CssBaseline';
+import NavTabs from './containers/NavTabs';
 
 function App() {
   return (
     <>
-      
-      <NavBar />
-      <Layout />
+      <CssBaseline />
+      <Header />
+      <NavTabs/>
     </>
   );
 }

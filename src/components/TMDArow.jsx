@@ -36,7 +36,6 @@ export default function TMDA() {
     const percCarshour = [0.58,0.19,0.44,0,0.14,0.51,2.33,5.31,5.9,4.88,5.46,4.44,4.22,6.19,6.91,8.15,7.79,9.97,7.21,6.91,5.02,3.78,2.33,1.24];
     const percCarsday = [84.01,81.19,85.35,83.12,83.98,123,91];
     const percCarsmonth = [111.33,112.36,105.85,99,95.57,92.49,90.1,98.04,88.73,94.89,104.79,106.85];
-    
     const censusTrucks = tmda.censusT;
     const percTruckshour = [0.33,0,0.46,0,0,0.8,2.05,6.61,10.25,6.83,8.43,8.2,6.61,7.06,8.2,8.66,8.43,6.83,4.1,2.73,1.59,0.91,0.46,0.46];
     const percTrucksday = [108.69,110.55,105.27,114.27,111.85,109.86,39.51];
@@ -44,39 +43,39 @@ export default function TMDA() {
     const calcHourC = () => {
         let sum = 0;
         for (let index = tmda.since_hs; index < tmda.till_hs; index++) {
-        sum += percCarshour[index];
+            sum += percCarshour[index];
         }
         return sum;
     };
     const calcDayC = () => {
         let week = [ 0, 1, 2, 3, 4, 5, 6 ];
         for (let index = 0; index < 7; index++) {
-        if (tmda.day == week[index]) {
-            return percCarsday[index];
-        }
+            if (tmda.day == week[index]) {
+                return percCarsday[index];
+            }
         }
     };
     const calcMonthC = () => {
         let year = [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11 ];
         for (let index = 0; index < 12; index++) {
-        if (tmda.month == year[index]) {
-            return percCarsmonth[index];
-        }
+            if (tmda.month == year[index]) {
+                return percCarsmonth[index];
+            }
         }
     };
     const calcHourT = () => {
         let sum = 0;
         for (let index = tmda.since_hs; index < tmda.till_hs; index++) {
-        sum += percTruckshour[index];
+            sum += percTruckshour[index];
         }
         return sum;
     };
     const calcDayT = () => {
         let week = [ 0, 1, 2, 3, 4, 5, 6 ];
         for (let index = 0; index < 7; index++) {
-        if (tmda.day == week[index]) {
-            return percTrucksday[index];
-        }
+            if (tmda.day == week[index]) {
+                return percTrucksday[index];
+            }
         }
     };
     const calcMonthT = () => {
@@ -88,26 +87,23 @@ export default function TMDA() {
         }
     };
     const tmda1 = () => {
-    let result = Math.round( censusCars * (100 / calcHourC()) * (100 / calcDayC()) * (100 / calcMonthC()) );
-    
-    if (Boolean(result) == true ) {
-        return result;
-      }
-      else{
-        return 0;
-      }
-    } 
-    const tmda2 = () => {
-        let result = Math.round( censusTrucks * (100 / calcHourT()) * (100 / calcDayT()) * (100 / calcMonthT()) );
-        
+        let result = Math.round( censusCars * (100 / calcHourC()) * (100 / calcDayC()) * (100 / calcMonthC()) );
         if (Boolean(result) == true ) {
             return result;
-          }
-          else{
+        }
+        else{
             return 0;
-          }
-    } 
-
+        }
+    }; 
+    const tmda2 = () => {
+        let result = Math.round( censusTrucks * (100 / calcHourT()) * (100 / calcDayT()) * (100 / calcMonthT()) );
+        if (Boolean(result) == true ) {
+            return result;
+        }
+        else{
+            return 0;
+        }
+    }; 
     return (
         <> 
             <TableRow>

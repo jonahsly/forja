@@ -5,12 +5,12 @@ import Typography from '@mui/material/Typography';
 import BuildSharpIcon from '@mui/icons-material/BuildSharp';
 
 
-export default function NavBar() {
+export default function Header() {
   return (
     <AppBar position="static">
       <Toolbar sx={{ display: 'flex', flexDirection: 'row', justifyContent: 'flex-start', }}>
         <BuildSharpIcon fontSize="large"/>
-        <Typography variant="h6" component="div">
+        <Typography variant="h6" component="div" marginLeft="10px" marginRight="10px">
           Herramientas de Ingeniería
         </Typography>
       </Toolbar>
