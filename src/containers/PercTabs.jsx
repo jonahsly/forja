@@ -1,7 +1,7 @@
 import * as React from "react";
-import HourTab from "../components/HourTab";
-import DayTab from "../components/DayTab";
-import MonthTab from "../components/MonthTab";
+import HourTab from "../components/tmdaHourTab";
+import DayTab from "../components/tmdaDayTab";
+import MonthTab from "../components/tmdaMonthTab";
 
 export default function PercTabs() {
     return (
